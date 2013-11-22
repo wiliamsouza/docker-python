@@ -23,7 +23,11 @@ Source code
 You can put your code in any folder name but you need to make a reference to
 it in `Dockerfile` environment variable `PROJECT`.
 
-Entry point
------------
+Entrypoint
+----------
 
-Put your start code in `start.py`
+You have the option to let your dockerized application behave like a binary
+to do that just put your start code in `entrypoint.py` and it will take care
+to initialize your application when you run:
+
+    docker run wiliamsouza/python 
