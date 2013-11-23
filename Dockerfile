@@ -6,9 +6,6 @@ FROM ubuntu
 
 MAINTAINER Wiliam Souza <wiliamsouza83@gmail.com>
 
-# Change to the your project name
-ENV PROJECT myproject
-
 # Set language
 ENV LANG en_US.UTF-8
 
@@ -32,7 +29,10 @@ RUN apt-get upgrade -y
 
 # Dependencies
 RUN apt-get install -y python3.3
-RUN apt-get install -y python3.3-dev
+#RUN apt-get install -y python3.3-dev
+
+# Change to the your project name
+ENV PROJECT myproject
 
 # Source
 ADD . /srv/${PROJECT}
@@ -40,8 +40,8 @@ RUN cd /srv/${PROJECT}
 
 # Virtual environment
 # Uncomment the following line to run inside a venv.
-#pyvenv-3.3 /srv/${PROJECT}
-#source /srv/${PROJECT}/bin/activate
+#RUN pyvenv-3.3 /srv/$PROJECT
+#RUN source /srv/$PROJECT/bin/activate
 
 # Setuptools
 RUN wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
@@ -56,4 +56,8 @@ RUN pip-3.3 install -r /srv/$PROJECT/requirements/production.txt
 
 EXPOSE 8000 
 
-RUN chmod +x /srv/@{PROJECT}/entrypoint.py
+RUN chmod +x /srv/$PROJECT/entrypoint.py
+
+# Change this to point to your entrypoint.
+ENTRYPOINT ["/srv/myproject/entrypoint.py"]
+CMD ["--help"]

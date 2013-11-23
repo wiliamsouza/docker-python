@@ -5,11 +5,15 @@ Docker container template for Python development and deploy.
 
 To build run:
 
-    sudo docker build -t wiliamsouza/python .
+    $ sudo docker build -t wiliamsouza/python .
+
+Change `wiliamsouza` and `python` to your Docker
+[index](https://index.docker.io/u/wiliamsouza/) username and your project
+name respectively.
 
 To run:
 
-    sudo docker run -i -t wiliamsouza/python /bin/bash
+    $ sudo docker run -i -t wiliamsouza/python /bin/bash
 
 Requirements
 ------------
@@ -30,4 +34,13 @@ You have the option to let your dockerized application behave like a binary
 to do that just put your start code in `entrypoint.py` and it will take care
 to initialize your application when you run:
 
-    docker run wiliamsouza/python 
+    $ sudo docker run wiliamsouza/python 
+
+Trusted builds
+--------------
+
+Now your project is dockerized and ready to become a trusted build. To know
+what it is and how it work proceed to the announcement
+[blog post](http://blog.docker.io/2013/11/introducing-trusted-builds/).
+Basically every time you change your code a trigger will build and update
+your project image inside of the docker index.
