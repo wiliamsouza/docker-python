@@ -56,5 +56,4 @@ RUN pip-3.3 install -r /srv/$PROJECT/requirements/production.txt
 
 EXPOSE 8000 
 
-ENTRYPOINT ["python3.3"]
-CMD ["/srv/@{PROJECT}/entrypoint.py"]
+RUN chmod +x /srv/@{PROJECT}/entrypoint.py
