@@ -30,9 +30,9 @@ it in `Dockerfile` environment variable `PROJECT`.
 Entrypoint
 ----------
 
-You have the option to let your dockerized application behave like a binary
-to do that just put your start code in `entrypoint.py` and it will take care
-to initialize your application when you run:
+You have the option to let your dockerized application behave like a binary,
+to do that just edit and uncomment the last lines `Dockerfile`, so it will
+take care to run your application when you call:
 
     $ sudo docker run wiliamsouza/python 
 

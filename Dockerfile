@@ -35,8 +35,8 @@ RUN apt-get install -y python3.3
 ENV PROJECT myproject
 
 # Source
-ADD . /srv/${PROJECT}
-RUN cd /srv/${PROJECT}
+ADD . /srv/$PROJECT
+RUN cd /srv/$PROJECT
 
 # Virtual environment
 # Uncomment the following line to run inside a venv.
@@ -58,6 +58,6 @@ EXPOSE 8000
 
 RUN chmod +x /srv/$PROJECT/entrypoint.py
 
-# Change this to point to your entrypoint.
-ENTRYPOINT ["/srv/myproject/entrypoint.py"]
-CMD ["--help"]
+# Uncomment the following line to your container behave like a binary. 
+#ENTRYPOINT ["/srv/<project>/entrypoint.py"]
+#CMD ["--help"]
