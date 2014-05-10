@@ -44,7 +44,3 @@ what it is and how it work proceed to the announcement
 [blog post](http://blog.docker.io/2013/11/introducing-trusted-builds/).
 Basically every time you change your code a trigger will build and update
 your project image inside of the docker index.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/wiliamsouza/docker-python/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
